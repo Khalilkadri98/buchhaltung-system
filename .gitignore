@@ -1,0 +1,37 @@
+# Node.js
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+logs/
+
+# npm-debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files (e.g., VSCode, IntelliJ, etc.)
+.vscode/
+.idea/
+
+# Build directories
+dist/
+build/
+
+# Testing coverage directory
+coverage/
+
+# Docker files (optional, if using Docker)
+docker-compose.override.yml
+.docker/
+
+# Database files (if using local databases like SQLite, etc.)
+*.db
+*.sqlite
