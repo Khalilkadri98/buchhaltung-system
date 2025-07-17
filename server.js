@@ -17,6 +17,8 @@ app.use(express.json());
 
 // Register routes
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/ocr', require('./routes/uploadRoutes')); // This must exist and be correct
+
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "buchhaltung-466111",
+  "private_key_id": "2d499134e084d3217b13cc73f4a7f1cf31196b9a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCT5YIbVt7Cm9J6\nU+LhjgKkiRCV14Qw3mxzONxbS0Y+hhYF6DsjVH529Yuf/vITaVfw5xwbXDrd5yFo\n0IJvHtztoTbP60MwZ++lKMOB8lHE2jpCFdSDWlHsqvHRGhX0JsW8JNQkkitDCzky\n+GATJia8scOHvL/4MztG8R4pXtvHqypjlBIKv20MdrT6d2/k9alIFX8pNlTZRMB5\nao5BQIyFeW7Gv+c72JijBYplxJ2gr6F+AFyP097Onn4/syFixiWdjqbrbalUA8Gv\nFwFopjJbeL7hYh051P1TUEYlk/Rch3AssIw2QEUfzMKOqtt5/y7ckVVZ9cjSVzEE\ncxJlZOo/AgMBAAECggEAJHU5tvqZrDiUUKJ4Nej3fs7o/z8i75cM/fRg4cJzHPuZ\n1zfxyBpOmI2cL0M+MonP62tVUutP+Z697iQkWzcs+Ak7RVL1+6tLeJfNZi2xeYjg\nPqU5/21W77QOK2E2UzrxmJktkJxVvM+5+HYg3OeVOgPKMx5U5l7euHS83i7rl9Ma\nei6pWbXw5fyZmGPJjL1d3/TlwzAAk6RtHc0i90eKyxHv9t9OZzqjPASJxofqz6zJ\nP6ywQaQyryPlmy301vLMNB5laY1RP/H+S5HkxCDDuLkUQ9ZWXyCSNHUFpA6E21Io\nqbBoZ+uqNRbMCvo49xJV8tcermMsGMEeCzY0pnAeWQKBgQDK3TGpD/gvR41zo8a/\n/pUirGeONTgUHjUT6rS2HBJ4eIeJVjReFR3LQicOiSnkbtnyAgc8Tm4S9TW4R1RH\nOgadnuMi0F5TfKUCE2uHgUlB5djaHHx6GmcXQhEwqo9s4w6IIQwnCe4NhU+SsPiD\n6YmsJ43Xc6n+F8oKvgne+meftwKBgQC6oohaUO+vvBfHHFbTTq9FSzF9wFjM9SMC\njtlTwt0GX6pPuMROvgzmpHKrw1nJ/W4yTTBXq+5WCW3lRdMjQh2NERz3B5TfZ3Y6\nehjbFDj6rCNSDWgcHY1tTfj80qrTjb0z80EKD7XIkxCp4DZCyRiEnR3mGEbTDpRM\nm/WjYCN5uQKBgGF/0gBZRoUitJ9hlYJtTywtBFBaz6sLoaMC6PulnlL8Stf88IpP\nR9SK5M6dqd66UFF6HBQl9c1ywPDih2T8RHW5CZ2P2+XwQDYxMzsbLiRX3dNmYYUl\n72pEPJLRRsGklzVh/L8+jIU/DzGHkMmFkr+E+y0T0B3pPRfQolniq68dAoGAOoB+\nG0lpiH1+OpSghsYQXLkwP0nOzBg/LCsY5o+bdsb//NNe/YvHQXjk1QB8IbvGEhBu\nCd1D7UYxY3/aqh+sYa6ulKSUvt6Qic4CApI5NiJFRBAdxUpiLZQWazGiCIRSfXlP\nttar1b57p7Q3bgHZJKCXYavUb44PYGA2xEp7dEkCgYEAucQblD8PYaCyY2bpC8qu\nQUSOfcHAXEhMeclDduo4/GMj3GpIOLQSlhEEq8dYJ6cz05sNE/4XdEBezKh9EKpn\ngZcc21Qk1JobsgN+Yt8u+saviJXi2GHdcDMWYT6jT8DiwhhMXyd9JK2z4MS/Ibmw\noixPy98fgLhrQVB+FdW1HRs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "buchhaltung@buchhaltung-466111.iam.gserviceaccount.com",
+  "client_id": "109741864211171724347",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/buchhaltung%40buchhaltung-466111.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
