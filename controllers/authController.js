@@ -69,7 +69,7 @@ exports.forgotPassword = async (req, res) => {
     user.resetTokenExpires = Date.now() + 1000 * 60 * 60;
     await user.save();
 
-    const resetLink = `http://localhost:3000/reset-password/${token}`;
+    const resetLink = `http://localhost:8080/reset-password/${token}`;
 
     await transporter.sendMail({
       from: `"${process.env.MAIL_FROM_NAME}" <${process.env.MAIL_FROM_ADDRESS}>`,
