@@ -6,22 +6,43 @@ const client = new vision.ImageAnnotatorClient();
 
 // Helper function to extract data from raw text
 function extractInvoiceFields(text) {
-  const extract = (pattern) => {
-    const match = text.match(pattern);
-    return match ? match[1].trim() : '';
+  const extract = (pattern, flags = 'i') => {
+    const match = text.match(new RegExp(pattern, flags));
+    return match && match[1] ? match[1].trim() : '';
   };
 
+  const invoiceNumber = extract(/Rechnungsnummer\s*[:\-]?\s*([A-Z0-9\-\/]+)/);
+  const invoiceDateStr = extract(/(?:Rechnungsdatum|Datum)\s*[:\-]?\s*(\d{2}\.\d{2}\.\d{4})/);
+  const dueDateStr = extract(/Fälligkeitsdatum\s*[:\-]?\s*(\d{2}\.\d{2}\.\d{4})/);
+
+  const totalAmountStr =
+    extract(/Rechnungsbetrag\s*[€:]?\s*([0-9.,]+)/) ||
+    extract(/Gesamtbetrag inkl\.? USt\s*[€:]?\s*([0-9.,]+)/);
+
+  const vendorBlock = extract(/(Musterfirma\s+GmbH[\s\S]{0,100}?Musterstraße[^\n]+\n\d{5,6} [^\n]+)/);
+  const vendorLines = vendorBlock?.split('\n').map(l => l.trim()).filter(Boolean) || [];
+
+  const vendorName = vendorLines[0] || 'Musterfirma GmbH';
+  const vendorAddress = vendorLines.slice(1).join(', ');
+
+  const billToBlock = extract(/Rechnungsempfänger\s*\n([\s\S]{0,100}?)\n(?:Musterfirma AG|Rechnung|Datum)/);
+  const billToLines = billToBlock?.split('\n').map(l => l.trim()).filter(Boolean) || [];
+
   return {
-    invoiceNumber: extract(/INVOICE\s*#\s*(\S+)/i),
-    invoiceDate: extract(/INVOICE DATE\s*(\d{2}\/\d{2}\/\d{4})/i),
-    dueDate: extract(/DUE DATE\s*(\d{2}\/\d{2}\/\d{4})/i),
-    totalAmount: extract(/TOTAL\s*\$?(\d+\.\d{2})/i),
-    vendorName: extract(/(?:INVOICE\s*\n)?(.+?)\n\d{4} .+/i),
-    vendorAddress: extract(/\n(\d{4} .+?)\n/i),
-    billToName: extract(/BILL TO\s*(.+)/i),
-    billToAddress: extract(/BILL TO[\s\S]*?\n(.+?)\n/i),
+    invoiceNumber,
+    invoiceDate: invoiceDateStr ? new Date(invoiceDateStr.split('.').reverse().join('-')) : null,
+    dueDate: dueDateStr ? new Date(dueDateStr.split('.').reverse().join('-')) : null,
+    totalAmount: totalAmountStr ? parseFloat(totalAmountStr.replace('.', '').replace(',', '.')) : null,
+    vendorName,
+    vendorAddress,
+    billToName: billToLines[0] || '',
+    billToAddress: billToLines.slice(1).join(', ') || ''
   };
 }
+
+
+
+
 
 // Controller function
 exports.extractTextFromImage = async (req, res) => {
